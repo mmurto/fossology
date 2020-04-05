@@ -1,0 +1,410 @@
+- args:
+    table:
+      name: agent
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: agent_wc
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: ars_master
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: author
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: bucket_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: bucket_container
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: bucket_def
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: bucket_file
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: bucketpool
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: clearing_decision
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: clearing_decision_event
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: clearing_event
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: copyright
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: copyright_decision
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: decider_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: deciderjob_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: dep5_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: ecc
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: ecc_decision
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: file_picker
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: folder
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: foldercontents
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: folderlist
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: groups
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: group_user_member
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: highlight
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: highlight_bulk
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: highlight_keyword
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: job
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: jobdepends
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: jobqueue
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: keyword
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: keyword_decision
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_candidate
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_file
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_file_ref
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_map
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_ref
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_ref_bulk
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_set_bulk
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: license_std_comment
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: mimetype
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: monk_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: nomos_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: obligation_candidate_map
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: obligation_map
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: obligation_ref
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: package
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: perm_upload
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: personal_access_tokens
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: pfile
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: pkg_deb
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: pkg_deb_req
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: pkg_rpm
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: pkg_rpm_req
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: readmeoss_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: report_cache
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: report_cache_user
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: reportgen
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: reportimport_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: report_info
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: reuser_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: software_heritage
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: softwareheritage_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: spdx2_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: spdx2tv_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: sysconfig
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: tag
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: tag_file
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: tag_manage
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: tag_uploadtree
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: unifiedreport_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: ununpack_ars
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: upload
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: upload_clearing
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: upload_clearing_license
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: upload_packages
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: upload_reuse
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: uploadtree
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: uploadtree_a
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: uploadtree_tag_file_inner
+      schema: public
+  type: untrack_table
+- args:
+    table:
+      name: users
+      schema: public
+  type: untrack_table

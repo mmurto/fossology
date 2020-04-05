@@ -1,0 +1,328 @@
+- args:
+    name: agent
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: agent_wc
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: ars_master
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: author
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: bucket_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: bucket_container
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: bucket_def
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: bucket_file
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: bucketpool
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: clearing_decision
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: clearing_decision_event
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: clearing_event
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: copyright
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: copyright_decision
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: decider_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: deciderjob_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: dep5_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: ecc
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: ecc_decision
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: file_picker
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: folder
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: foldercontents
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: folderlist
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: groups
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: group_user_member
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: highlight
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: highlight_bulk
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: highlight_keyword
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: job
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: jobdepends
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: jobqueue
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: keyword
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: keyword_decision
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_candidate
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_file
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_file_ref
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_map
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_ref
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_ref_bulk
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_set_bulk
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: license_std_comment
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: mimetype
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: monk_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: nomos_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: obligation_candidate_map
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: obligation_map
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: obligation_ref
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: package
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: perm_upload
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: personal_access_tokens
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: pfile
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: pkg_deb
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: pkg_deb_req
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: pkg_rpm
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: pkg_rpm_req
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: readmeoss_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: report_cache
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: report_cache_user
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: reportgen
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: reportimport_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: report_info
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: reuser_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: software_heritage
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: softwareheritage_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: spdx2_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: spdx2tv_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: sysconfig
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: tag
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: tag_file
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: tag_manage
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: tag_uploadtree
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: unifiedreport_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: ununpack_ars
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: upload
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: upload_clearing
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: upload_clearing_license
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: upload_packages
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: upload_reuse
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: uploadtree
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: uploadtree_a
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: uploadtree_tag_file_inner
+    schema: public
+  type: add_existing_table_or_view
+- args:
+    name: users
+    schema: public
+  type: add_existing_table_or_view

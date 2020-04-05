@@ -1,0 +1,1121 @@
+- args:
+    name: ars_masters
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: ars_master
+          schema: public
+  type: create_array_relationship
+- args:
+    name: authors
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: author
+          schema: public
+  type: create_array_relationship
+- args:
+    name: bucket_containers
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: bucket_container
+          schema: public
+  type: create_array_relationship
+- args:
+    name: bucketContainersByNomosagentFk
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: nomosagent_fk
+        table:
+          name: bucket_container
+          schema: public
+  type: create_array_relationship
+- args:
+    name: bucket_files
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: bucket_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: bucketFilesByNomosagentFk
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: nomosagent_fk
+        table:
+          name: bucket_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: copyrights
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: copyright
+          schema: public
+  type: create_array_relationship
+- args:
+    name: eccs
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: ecc
+          schema: public
+  type: create_array_relationship
+- args:
+    name: keywords
+    table:
+      name: agent
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          name: keyword
+          schema: public
+  type: create_array_relationship
+- args:
+    name: agent
+    table:
+      name: ars_master
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: ars_master
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: agent
+    table:
+      name: author
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: author
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: agent
+    table:
+      name: bucket_container
+      schema: public
+    using:
+      foreign_key_constraint_on: nomosagent_fk
+  type: create_object_relationship
+- args:
+    name: agentByAgentFk
+    table:
+      name: bucket_container
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: bucket_def
+    table:
+      name: bucket_container
+      schema: public
+    using:
+      foreign_key_constraint_on: bucket_fk
+  type: create_object_relationship
+- args:
+    name: bucketpool
+    table:
+      name: bucket_def
+      schema: public
+    using:
+      foreign_key_constraint_on: bucketpool_fk
+  type: create_object_relationship
+- args:
+    name: bucket_containers
+    table:
+      name: bucket_def
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: bucket_fk
+        table:
+          name: bucket_container
+          schema: public
+  type: create_array_relationship
+- args:
+    name: bucket_files
+    table:
+      name: bucket_def
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: bucket_fk
+        table:
+          name: bucket_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: agent
+    table:
+      name: bucket_file
+      schema: public
+    using:
+      foreign_key_constraint_on: nomosagent_fk
+  type: create_object_relationship
+- args:
+    name: agentByAgentFk
+    table:
+      name: bucket_file
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: bucket_def
+    table:
+      name: bucket_file
+      schema: public
+    using:
+      foreign_key_constraint_on: bucket_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: bucket_file
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: bucket_defs
+    table:
+      name: bucketpool
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: bucketpool_fk
+        table:
+          name: bucket_def
+          schema: public
+  type: create_array_relationship
+- args:
+    name: users
+    table:
+      name: bucketpool
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: default_bucketpool_fk
+        table:
+          name: users
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pfile
+    table:
+      name: clearing_decision
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: agent
+    table:
+      name: copyright
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: copyright
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: copyright_decision
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: agent
+    table:
+      name: ecc
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: ecc
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: ecc_decision
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: jobs
+    table:
+      name: folder
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: job_folder_fk
+        table:
+          name: job
+          schema: public
+  type: create_array_relationship
+- args:
+    name: perm_uploads
+    table:
+      name: groups
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: group_fk
+        table:
+          name: perm_upload
+          schema: public
+  type: create_array_relationship
+- args:
+    name: users
+    table:
+      name: groups
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: group_fk
+        table:
+          name: users
+          schema: public
+  type: create_array_relationship
+- args:
+    name: usersByNewUploadGroupFk
+    table:
+      name: groups
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: new_upload_group_fk
+        table:
+          name: users
+          schema: public
+  type: create_array_relationship
+- args:
+    name: license_candidates
+    table:
+      name: groups
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: group_fk
+        table:
+          name: license_candidate
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pfile
+    table:
+      name: highlight_keyword
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: folder
+    table:
+      name: job
+      schema: public
+    using:
+      foreign_key_constraint_on: job_folder_fk
+  type: create_object_relationship
+- args:
+    name: jobqueues
+    table:
+      name: job
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: jq_job_fk
+        table:
+          name: jobqueue
+          schema: public
+  type: create_array_relationship
+- args:
+    name: jobqueue
+    table:
+      name: jobdepends
+      schema: public
+    using:
+      foreign_key_constraint_on: jdep_jq_fk
+  type: create_object_relationship
+- args:
+    name: jobqueueByJdepJqDependsFk
+    table:
+      name: jobdepends
+      schema: public
+    using:
+      foreign_key_constraint_on: jdep_jq_depends_fk
+  type: create_object_relationship
+- args:
+    name: job
+    table:
+      name: jobqueue
+      schema: public
+    using:
+      foreign_key_constraint_on: jq_job_fk
+  type: create_object_relationship
+- args:
+    name: jobdepends
+    table:
+      name: jobqueue
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: jdep_jq_depends_fk
+        table:
+          name: jobdepends
+          schema: public
+  type: create_array_relationship
+- args:
+    name: jobdependsByJdepJqFk
+    table:
+      name: jobqueue
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: jdep_jq_fk
+        table:
+          name: jobdepends
+          schema: public
+  type: create_array_relationship
+- args:
+    name: agent
+    table:
+      name: keyword
+      schema: public
+    using:
+      foreign_key_constraint_on: agent_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: keyword
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: keyword_decision
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: group
+    table:
+      name: license_candidate
+      schema: public
+    using:
+      foreign_key_constraint_on: group_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: license_file
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: license_ref
+    table:
+      name: license_map
+      schema: public
+    using:
+      foreign_key_constraint_on: rf_fk
+  type: create_object_relationship
+- args:
+    name: license_maps
+    table:
+      name: license_ref
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: rf_fk
+        table:
+          name: license_map
+          schema: public
+  type: create_array_relationship
+- args:
+    name: license_set_bulks
+    table:
+      name: license_ref_bulk
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: lrb_fk
+        table:
+          name: license_set_bulk
+          schema: public
+  type: create_array_relationship
+- args:
+    name: license_ref_bulk
+    table:
+      name: license_set_bulk
+      schema: public
+    using:
+      foreign_key_constraint_on: lrb_fk
+  type: create_object_relationship
+- args:
+    name: user
+    table:
+      name: license_std_comment
+      schema: public
+    using:
+      foreign_key_constraint_on: user_fk
+  type: create_object_relationship
+- args:
+    name: pfiles
+    table:
+      name: mimetype
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_mimetypefk
+        table:
+          name: pfile
+          schema: public
+  type: create_array_relationship
+- args:
+    name: upload_packages
+    table:
+      name: package
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: package_fk
+        table:
+          name: upload_packages
+          schema: public
+  type: create_array_relationship
+- args:
+    name: group
+    table:
+      name: perm_upload
+      schema: public
+    using:
+      foreign_key_constraint_on: group_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: perm_upload
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: user
+    table:
+      name: personal_access_tokens
+      schema: public
+    using:
+      foreign_key_constraint_on: user_fk
+  type: create_object_relationship
+- args:
+    name: mimetype
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_mimetypefk
+  type: create_object_relationship
+- args:
+    name: pkg_deb
+    table:
+      name: pfile
+      schema: public
+    using:
+      manual_configuration:
+        column_mapping:
+          pfile_pk: pfile_fk
+        remote_table:
+          name: pkg_deb
+          schema: public
+  type: create_object_relationship
+- args:
+    name: authors
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: author
+          schema: public
+  type: create_array_relationship
+- args:
+    name: bucket_files
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: bucket_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: clearing_decisions
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: clearing_decision
+          schema: public
+  type: create_array_relationship
+- args:
+    name: copyrights
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: copyright
+          schema: public
+  type: create_array_relationship
+- args:
+    name: copyright_decisions
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: copyright_decision
+          schema: public
+  type: create_array_relationship
+- args:
+    name: eccs
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: ecc
+          schema: public
+  type: create_array_relationship
+- args:
+    name: ecc_decisions
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: ecc_decision
+          schema: public
+  type: create_array_relationship
+- args:
+    name: highlight_keywords
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: highlight_keyword
+          schema: public
+  type: create_array_relationship
+- args:
+    name: keywords
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: keyword
+          schema: public
+  type: create_array_relationship
+- args:
+    name: keyword_decisions
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: keyword_decision
+          schema: public
+  type: create_array_relationship
+- args:
+    name: license_files
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: license_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pkg_rpms
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: pkg_rpm
+          schema: public
+  type: create_array_relationship
+- args:
+    name: software_heritages
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: software_heritage
+          schema: public
+  type: create_array_relationship
+- args:
+    name: tag_files
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: tag_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: uploads
+    table:
+      name: pfile
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          name: upload
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pfile
+    table:
+      name: pkg_deb
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: pkg_deb_reqs
+    table:
+      name: pkg_deb
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pkg_fk
+        table:
+          name: pkg_deb_req
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pkg_deb
+    table:
+      name: pkg_deb_req
+      schema: public
+    using:
+      foreign_key_constraint_on: pkg_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: pkg_rpm
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: pkg_rpm_reqs
+    table:
+      name: pkg_rpm
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: pkg_fk
+        table:
+          name: pkg_rpm_req
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pkg_rpm
+    table:
+      name: pkg_rpm_req
+      schema: public
+    using:
+      foreign_key_constraint_on: pkg_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: report_cache
+      schema: public
+    using:
+      foreign_key_constraint_on: report_cache_uploadfk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: reportgen
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: report_info
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: software_heritage
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: tag_files
+    table:
+      name: tag
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: tag_fk
+        table:
+          name: tag_file
+          schema: public
+  type: create_array_relationship
+- args:
+    name: tag_uploadtrees
+    table:
+      name: tag
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: tag_fk
+        table:
+          name: tag_uploadtree
+          schema: public
+  type: create_array_relationship
+- args:
+    name: pfile
+    table:
+      name: tag_file
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: tag
+    table:
+      name: tag_file
+      schema: public
+    using:
+      foreign_key_constraint_on: tag_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: tag_manage
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: tag
+    table:
+      name: tag_uploadtree
+      schema: public
+    using:
+      foreign_key_constraint_on: tag_fk
+  type: create_object_relationship
+- args:
+    name: pfile
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on: pfile_fk
+  type: create_object_relationship
+- args:
+    name: ars_masters
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: ars_master
+          schema: public
+  type: create_array_relationship
+- args:
+    name: perm_uploads
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: perm_upload
+          schema: public
+  type: create_array_relationship
+- args:
+    name: report_caches
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: report_cache_uploadfk
+        table:
+          name: report_cache
+          schema: public
+  type: create_array_relationship
+- args:
+    name: report_infos
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: report_info
+          schema: public
+  type: create_array_relationship
+- args:
+    name: reportgens
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: reportgen
+          schema: public
+  type: create_array_relationship
+- args:
+    name: tag_manages
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: tag_manage
+          schema: public
+  type: create_array_relationship
+- args:
+    name: upload_clearing_licenses
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: upload_clearing_license
+          schema: public
+  type: create_array_relationship
+- args:
+    name: upload_packages
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: upload_packages
+          schema: public
+  type: create_array_relationship
+- args:
+    name: uploadtrees
+    table:
+      name: upload
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          name: uploadtree
+          schema: public
+  type: create_array_relationship
+- args:
+    name: upload
+    table:
+      name: upload_clearing_license
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: package
+    table:
+      name: upload_packages
+      schema: public
+    using:
+      foreign_key_constraint_on: package_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: upload_packages
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: upload
+    table:
+      name: uploadtree
+      schema: public
+    using:
+      foreign_key_constraint_on: upload_fk
+  type: create_object_relationship
+- args:
+    name: bucketpool
+    table:
+      name: users
+      schema: public
+    using:
+      foreign_key_constraint_on: default_bucketpool_fk
+  type: create_object_relationship
+- args:
+    name: group
+    table:
+      name: users
+      schema: public
+    using:
+      foreign_key_constraint_on: new_upload_group_fk
+  type: create_object_relationship
+- args:
+    name: groupByGroupFk
+    table:
+      name: users
+      schema: public
+    using:
+      foreign_key_constraint_on: group_fk
+  type: create_object_relationship
+- args:
+    name: license_std_comments
+    table:
+      name: users
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: user_fk
+        table:
+          name: license_std_comment
+          schema: public
+  type: create_array_relationship
+- args:
+    name: personal_access_tokens
+    table:
+      name: users
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: user_fk
+        table:
+          name: personal_access_tokens
+          schema: public
+  type: create_array_relationship

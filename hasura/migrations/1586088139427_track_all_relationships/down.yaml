@@ -1,0 +1,672 @@
+- args:
+    relationship: ars_masters
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: authors
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_containers
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucketContainersByNomosagentFk
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_files
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucketFilesByNomosagentFk
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: copyrights
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: eccs
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: keywords
+    table:
+      name: agent
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: ars_master
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: ars_master
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: author
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: author
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: bucket_container
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agentByAgentFk
+    table:
+      name: bucket_container
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_def
+    table:
+      name: bucket_container
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucketpool
+    table:
+      name: bucket_def
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_containers
+    table:
+      name: bucket_def
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_files
+    table:
+      name: bucket_def
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: bucket_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agentByAgentFk
+    table:
+      name: bucket_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_def
+    table:
+      name: bucket_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: bucket_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_defs
+    table:
+      name: bucketpool
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: users
+    table:
+      name: bucketpool
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: clearing_decision
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: copyright
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: copyright
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: copyright_decision
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: ecc
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: ecc
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: ecc_decision
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: jobs
+    table:
+      name: folder
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: perm_uploads
+    table:
+      name: groups
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: users
+    table:
+      name: groups
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: usersByNewUploadGroupFk
+    table:
+      name: groups
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_candidates
+    table:
+      name: groups
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: highlight_keyword
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: folder
+    table:
+      name: job
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: jobqueues
+    table:
+      name: job
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: jobqueue
+    table:
+      name: jobdepends
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: jobqueueByJdepJqDependsFk
+    table:
+      name: jobdepends
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: job
+    table:
+      name: jobqueue
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: jobdepends
+    table:
+      name: jobqueue
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: jobdependsByJdepJqFk
+    table:
+      name: jobqueue
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: agent
+    table:
+      name: keyword
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: keyword
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: keyword_decision
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: group
+    table:
+      name: license_candidate
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: license_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_ref
+    table:
+      name: license_map
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_maps
+    table:
+      name: license_ref
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_set_bulks
+    table:
+      name: license_ref_bulk
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_ref_bulk
+    table:
+      name: license_set_bulk
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: user
+    table:
+      name: license_std_comment
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfiles
+    table:
+      name: mimetype
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload_packages
+    table:
+      name: package
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: group
+    table:
+      name: perm_upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: perm_upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: user
+    table:
+      name: personal_access_tokens
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: mimetype
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pkg_deb
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: authors
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucket_files
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: clearing_decisions
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: copyrights
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: copyright_decisions
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: eccs
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: ecc_decisions
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: highlight_keywords
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: keywords
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: keyword_decisions
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_files
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pkg_rpms
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: software_heritages
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: tag_files
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: uploads
+    table:
+      name: pfile
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: pkg_deb
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pkg_deb_reqs
+    table:
+      name: pkg_deb
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pkg_deb
+    table:
+      name: pkg_deb_req
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: pkg_rpm
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pkg_rpm_reqs
+    table:
+      name: pkg_rpm
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pkg_rpm
+    table:
+      name: pkg_rpm_req
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: report_cache
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: reportgen
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: report_info
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: software_heritage
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: tag_files
+    table:
+      name: tag
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: tag_uploadtrees
+    table:
+      name: tag
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: tag_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: tag
+    table:
+      name: tag_file
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: tag_manage
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: tag
+    table:
+      name: tag_uploadtree
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: pfile
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: ars_masters
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: perm_uploads
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: report_caches
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: report_infos
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: reportgens
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: tag_manages
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload_clearing_licenses
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload_packages
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: uploadtrees
+    table:
+      name: upload
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: upload_clearing_license
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: package
+    table:
+      name: upload_packages
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: upload_packages
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: upload
+    table:
+      name: uploadtree
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: bucketpool
+    table:
+      name: users
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: group
+    table:
+      name: users
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: groupByGroupFk
+    table:
+      name: users
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: license_std_comments
+    table:
+      name: users
+      schema: public
+  type: drop_relationship
+- args:
+    relationship: personal_access_tokens
+    table:
+      name: users
+      schema: public
+  type: drop_relationship
