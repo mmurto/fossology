@@ -1,0 +1,884 @@
+version: 2
+tables:
+- table:
+    schema: public
+    name: agent
+  array_relationships:
+  - name: ars_masters
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: ars_master
+  - name: authors
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: author
+  - name: bucket_containers
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: bucket_container
+  - name: bucketContainersByNomosagentFk
+    using:
+      foreign_key_constraint_on:
+        column: nomosagent_fk
+        table:
+          schema: public
+          name: bucket_container
+  - name: bucket_files
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: bucket_file
+  - name: bucketFilesByNomosagentFk
+    using:
+      foreign_key_constraint_on:
+        column: nomosagent_fk
+        table:
+          schema: public
+          name: bucket_file
+  - name: copyrights
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: copyright
+  - name: eccs
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: ecc
+  - name: keywords
+    using:
+      foreign_key_constraint_on:
+        column: agent_fk
+        table:
+          schema: public
+          name: keyword
+- table:
+    schema: public
+    name: agent_wc
+- table:
+    schema: public
+    name: ars_master
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: author
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: bucket_ars
+- table:
+    schema: public
+    name: bucket_container
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: agentByNomosagentFk
+    using:
+      foreign_key_constraint_on: nomosagent_fk
+  - name: bucket_def
+    using:
+      foreign_key_constraint_on: bucket_fk
+- table:
+    schema: public
+    name: bucket_def
+  object_relationships:
+  - name: bucketpool
+    using:
+      foreign_key_constraint_on: bucketpool_fk
+  array_relationships:
+  - name: bucket_containers
+    using:
+      foreign_key_constraint_on:
+        column: bucket_fk
+        table:
+          schema: public
+          name: bucket_container
+  - name: bucket_files
+    using:
+      foreign_key_constraint_on:
+        column: bucket_fk
+        table:
+          schema: public
+          name: bucket_file
+- table:
+    schema: public
+    name: bucket_file
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: agentByNomosagentFk
+    using:
+      foreign_key_constraint_on: nomosagent_fk
+  - name: bucket_def
+    using:
+      foreign_key_constraint_on: bucket_fk
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: bucketpool
+  array_relationships:
+  - name: bucket_defs
+    using:
+      foreign_key_constraint_on:
+        column: bucketpool_fk
+        table:
+          schema: public
+          name: bucket_def
+  - name: users
+    using:
+      foreign_key_constraint_on:
+        column: default_bucketpool_fk
+        table:
+          schema: public
+          name: users
+- table:
+    schema: public
+    name: clearing_decision
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: clearing_decision_event
+- table:
+    schema: public
+    name: clearing_event
+- table:
+    schema: public
+    name: copyright
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: copyright_ars
+- table:
+    schema: public
+    name: copyright_decision
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: decider_ars
+- table:
+    schema: public
+    name: deciderjob_ars
+- table:
+    schema: public
+    name: dep5_ars
+- table:
+    schema: public
+    name: ecc
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: ecc_ars
+- table:
+    schema: public
+    name: ecc_decision
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: file_picker
+- table:
+    schema: public
+    name: folder
+  array_relationships:
+  - name: jobs
+    using:
+      foreign_key_constraint_on:
+        column: job_folder_fk
+        table:
+          schema: public
+          name: job
+- table:
+    schema: public
+    name: foldercontents
+- table:
+    schema: public
+    name: folderlist
+- table:
+    schema: public
+    name: group_user_member
+- table:
+    schema: public
+    name: groups
+  array_relationships:
+  - name: license_candidates
+    using:
+      foreign_key_constraint_on:
+        column: group_fk
+        table:
+          schema: public
+          name: license_candidate
+  - name: perm_uploads
+    using:
+      foreign_key_constraint_on:
+        column: group_fk
+        table:
+          schema: public
+          name: perm_upload
+  - name: users
+    using:
+      foreign_key_constraint_on:
+        column: group_fk
+        table:
+          schema: public
+          name: users
+  - name: usersByNewUploadGroupFk
+    using:
+      foreign_key_constraint_on:
+        column: new_upload_group_fk
+        table:
+          schema: public
+          name: users
+- table:
+    schema: public
+    name: highlight
+- table:
+    schema: public
+    name: highlight_bulk
+- table:
+    schema: public
+    name: highlight_keyword
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: job
+  object_relationships:
+  - name: folder
+    using:
+      foreign_key_constraint_on: job_folder_fk
+  array_relationships:
+  - name: jobqueues
+    using:
+      foreign_key_constraint_on:
+        column: jq_job_fk
+        table:
+          schema: public
+          name: jobqueue
+- table:
+    schema: public
+    name: jobdepends
+  object_relationships:
+  - name: jobqueue
+    using:
+      foreign_key_constraint_on: jdep_jq_depends_fk
+  - name: jobqueueByJdepJqFk
+    using:
+      foreign_key_constraint_on: jdep_jq_fk
+- table:
+    schema: public
+    name: jobqueue
+  object_relationships:
+  - name: job
+    using:
+      foreign_key_constraint_on: jq_job_fk
+  array_relationships:
+  - name: jobdepends
+    using:
+      foreign_key_constraint_on:
+        column: jdep_jq_depends_fk
+        table:
+          schema: public
+          name: jobdepends
+  - name: jobdependsByJdepJqFk
+    using:
+      foreign_key_constraint_on:
+        column: jdep_jq_fk
+        table:
+          schema: public
+          name: jobdepends
+- table:
+    schema: public
+    name: keyword
+  object_relationships:
+  - name: agent
+    using:
+      foreign_key_constraint_on: agent_fk
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: keyword_ars
+- table:
+    schema: public
+    name: keyword_decision
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: license_candidate
+  object_relationships:
+  - name: group
+    using:
+      foreign_key_constraint_on: group_fk
+- table:
+    schema: public
+    name: license_file
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: license_file_ref
+- table:
+    schema: public
+    name: license_map
+  object_relationships:
+  - name: license_ref
+    using:
+      foreign_key_constraint_on: rf_fk
+- table:
+    schema: public
+    name: license_ref
+  array_relationships:
+  - name: license_maps
+    using:
+      foreign_key_constraint_on:
+        column: rf_fk
+        table:
+          schema: public
+          name: license_map
+- table:
+    schema: public
+    name: license_ref_bulk
+  array_relationships:
+  - name: license_set_bulks
+    using:
+      foreign_key_constraint_on:
+        column: lrb_fk
+        table:
+          schema: public
+          name: license_set_bulk
+- table:
+    schema: public
+    name: license_set_bulk
+  object_relationships:
+  - name: license_ref_bulk
+    using:
+      foreign_key_constraint_on: lrb_fk
+- table:
+    schema: public
+    name: license_std_comment
+  object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_fk
+- table:
+    schema: public
+    name: mimetype
+  array_relationships:
+  - name: pfiles
+    using:
+      foreign_key_constraint_on:
+        column: pfile_mimetypefk
+        table:
+          schema: public
+          name: pfile
+- table:
+    schema: public
+    name: mimetype_ars
+- table:
+    schema: public
+    name: monk_ars
+- table:
+    schema: public
+    name: nomos_ars
+- table:
+    schema: public
+    name: obligation_candidate_map
+- table:
+    schema: public
+    name: obligation_map
+- table:
+    schema: public
+    name: obligation_ref
+- table:
+    schema: public
+    name: ojo_ars
+- table:
+    schema: public
+    name: package
+  array_relationships:
+  - name: upload_packages
+    using:
+      foreign_key_constraint_on:
+        column: package_fk
+        table:
+          schema: public
+          name: upload_packages
+- table:
+    schema: public
+    name: perm_upload
+  object_relationships:
+  - name: group
+    using:
+      foreign_key_constraint_on: group_fk
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: personal_access_tokens
+  object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_fk
+- table:
+    schema: public
+    name: pfile
+  object_relationships:
+  - name: mimetype
+    using:
+      foreign_key_constraint_on: pfile_mimetypefk
+  - name: pkg_deb
+    using:
+      manual_configuration:
+        remote_table:
+          schema: public
+          name: pkg_deb
+        column_mapping:
+          pfile_pk: pfile_fk
+  array_relationships:
+  - name: authors
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: author
+  - name: bucket_files
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: bucket_file
+  - name: clearing_decisions
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: clearing_decision
+  - name: copyright_decisions
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: copyright_decision
+  - name: copyrights
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: copyright
+  - name: ecc_decisions
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: ecc_decision
+  - name: eccs
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: ecc
+  - name: highlight_keywords
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: highlight_keyword
+  - name: keyword_decisions
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: keyword_decision
+  - name: keywords
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: keyword
+  - name: license_files
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: license_file
+  - name: pkg_rpms
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: pkg_rpm
+  - name: software_heritages
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: software_heritage
+  - name: tag_files
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: tag_file
+  - name: uploads
+    using:
+      foreign_key_constraint_on:
+        column: pfile_fk
+        table:
+          schema: public
+          name: upload
+- table:
+    schema: public
+    name: pkg_deb
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+  array_relationships:
+  - name: pkg_deb_reqs
+    using:
+      foreign_key_constraint_on:
+        column: pkg_fk
+        table:
+          schema: public
+          name: pkg_deb_req
+- table:
+    schema: public
+    name: pkg_deb_req
+  object_relationships:
+  - name: pkg_deb
+    using:
+      foreign_key_constraint_on: pkg_fk
+- table:
+    schema: public
+    name: pkg_rpm
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+  array_relationships:
+  - name: pkg_rpm_reqs
+    using:
+      foreign_key_constraint_on:
+        column: pkg_fk
+        table:
+          schema: public
+          name: pkg_rpm_req
+- table:
+    schema: public
+    name: pkg_rpm_req
+  object_relationships:
+  - name: pkg_rpm
+    using:
+      foreign_key_constraint_on: pkg_fk
+- table:
+    schema: public
+    name: pkgagent_ars
+- table:
+    schema: public
+    name: readmeoss_ars
+- table:
+    schema: public
+    name: report_cache
+  object_relationships:
+  - name: upload
+    using:
+      foreign_key_constraint_on: report_cache_uploadfk
+- table:
+    schema: public
+    name: report_cache_user
+- table:
+    schema: public
+    name: report_info
+  object_relationships:
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: reportgen
+  object_relationships:
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: reportimport_ars
+- table:
+    schema: public
+    name: reuser_ars
+- table:
+    schema: public
+    name: software_heritage
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+- table:
+    schema: public
+    name: softwareheritage_ars
+- table:
+    schema: public
+    name: spdx2_ars
+- table:
+    schema: public
+    name: spdx2tv_ars
+- table:
+    schema: public
+    name: sysconfig
+- table:
+    schema: public
+    name: tag
+  array_relationships:
+  - name: tag_files
+    using:
+      foreign_key_constraint_on:
+        column: tag_fk
+        table:
+          schema: public
+          name: tag_file
+  - name: tag_uploadtrees
+    using:
+      foreign_key_constraint_on:
+        column: tag_fk
+        table:
+          schema: public
+          name: tag_uploadtree
+- table:
+    schema: public
+    name: tag_file
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+  - name: tag
+    using:
+      foreign_key_constraint_on: tag_fk
+- table:
+    schema: public
+    name: tag_manage
+  object_relationships:
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: tag_uploadtree
+  object_relationships:
+  - name: tag
+    using:
+      foreign_key_constraint_on: tag_fk
+- table:
+    schema: public
+    name: unifiedreport_ars
+- table:
+    schema: public
+    name: ununpack_ars
+- table:
+    schema: public
+    name: upload
+  object_relationships:
+  - name: pfile
+    using:
+      foreign_key_constraint_on: pfile_fk
+  array_relationships:
+  - name: ars_masters
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: ars_master
+  - name: perm_uploads
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: perm_upload
+  - name: report_caches
+    using:
+      foreign_key_constraint_on:
+        column: report_cache_uploadfk
+        table:
+          schema: public
+          name: report_cache
+  - name: reportgens
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: reportgen
+  - name: report_infos
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: report_info
+  - name: tag_manages
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: tag_manage
+  - name: upload_clearing_licenses
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: upload_clearing_license
+  - name: upload_packages
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: upload_packages
+  - name: uploadtrees
+    using:
+      foreign_key_constraint_on:
+        column: upload_fk
+        table:
+          schema: public
+          name: uploadtree
+- table:
+    schema: public
+    name: upload_clearing
+- table:
+    schema: public
+    name: upload_clearing_license
+  object_relationships:
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: upload_packages
+  object_relationships:
+  - name: package
+    using:
+      foreign_key_constraint_on: package_fk
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: upload_reuse
+- table:
+    schema: public
+    name: uploadtree
+  object_relationships:
+  - name: upload
+    using:
+      foreign_key_constraint_on: upload_fk
+- table:
+    schema: public
+    name: uploadtree_a
+- table:
+    schema: public
+    name: uploadtree_tag_file_inner
+- table:
+    schema: public
+    name: users
+  object_relationships:
+  - name: bucketpool
+    using:
+      foreign_key_constraint_on: default_bucketpool_fk
+  - name: group
+    using:
+      foreign_key_constraint_on: group_fk
+  - name: groupByNewUploadGroupFk
+    using:
+      foreign_key_constraint_on: new_upload_group_fk
+  array_relationships:
+  - name: license_std_comments
+    using:
+      foreign_key_constraint_on:
+        column: user_fk
+        table:
+          schema: public
+          name: license_std_comment
+  - name: personal_access_tokens
+    using:
+      foreign_key_constraint_on:
+        column: user_fk
+        table:
+          schema: public
+          name: personal_access_tokens
