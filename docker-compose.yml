@@ -9,16 +9,16 @@
 #
 # Description: Recipe for setting up a multi container FOSSology
 #              Docker setup with separate Database instance
-version: '3.5'
+version: "3.5"
 services:
   scheduler:
     build:
       context: .
       dockerfile: Dockerfile
       args:
-      - http_proxy
-      - https_proxy
-      - no_proxy
+        - http_proxy
+        - https_proxy
+        - no_proxy
     image: fossology
     restart: unless-stopped
     environment:
@@ -36,9 +36,9 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-      - http_proxy
-      - https_proxy
-      - no_proxy
+        - http_proxy
+        - https_proxy
+        - no_proxy
     image: fossology
     restart: unless-stopped
     environment:
